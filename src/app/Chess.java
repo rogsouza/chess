@@ -1,10 +1,13 @@
 package app;
 
+import boardgame.Position;
+
 public class Chess {
 
 	public static void main(String[] args) {
 
-		System.out.println("Hello World!");
+		Position pos = new Position(3, 5);
+		System.out.println(pos);
 
 	}
 
@@ -54,12 +57,110 @@ public class Chess {
 	drwxr-xr-x 1 radso 197609   0 abr 11 11:31 bin/
 	drwxr-xr-x 1 radso 197609   0 abr 11 11:31 src/ 
 
-3) Vincular o git ao repositorio remoto
+3) Vincular o git local ao repositorio remoto
 
 	λ git remote add origin git@github.com:rogsouza/chess.git
 	
-4) Trocar master para main
+4) Trocar branch de master para main (O git esta criando como main ao inves de master na web)
 
+	λ git branch -m master main
+
+5) Atualizar o repositorio local com os dados do repositorio remoto
+
+	λ git pull origin main
+	remote: Enumerating objects: 3, done.
+	remote: Counting objects: 100% (3/3), done.
+	remote: Compressing objects: 100% (2/2), done.
+	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (3/3), 780 bytes | 4.00 KiB/s, done.
+	From github.com:rogsouza/chess
+	 * branch            main       -> FETCH_HEAD
+	 * [new branch]      main       -> origin/main
+
+	λ ls -la
+	total 15
+	drwxr-xr-x 1 radso 197609   0 abr 11 11:52 ./
+	drwxr-xr-x 1 radso 197609   0 abr 11 11:30 ../
+	-rw-r--r-- 1 radso 197609 396 abr 11 11:30 .classpath
+	drwxr-xr-x 1 radso 197609   0 abr 11 11:52 .git/
+	-rw-r--r-- 1 radso 197609 301 abr 11 11:52 .gitignore
+	-rw-r--r-- 1 radso 197609 381 abr 11 11:30 .project
+	drwxr-xr-x 1 radso 197609   0 abr 11 11:30 .settings/
+	drwxr-xr-x 1 radso 197609   0 abr 11 11:31 bin/
+	drwxr-xr-x 1 radso 197609   0 abr 11 11:31 src/
+
+6) Verificar o status do repositorio local
+
+	λ git status
+	On branch main
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        .classpath
+	        .project
+	        .settings/
+	        src/
 	
+	nothing added to commit but untracked files present (use "git add" to track)
 
+7) Verificar se o usuario corrente esta configurado no git (user.email e user.name) alem de ver como esta configurado a origem (remote.origin.url)
+
+	λ git config --list
+	core.symlinks=false
+	core.autocrlf=true
+	core.fscache=true
+	color.interactive=true
+	color.ui=auto
+	help.format=html
+	diff.astextplain.textconv=astextplain
+	rebase.autosquash=true
+	filter.lfs.clean=git-lfs clean -- %f
+	filter.lfs.smudge=git-lfs smudge -- %f
+	filter.lfs.process=git-lfs filter-process
+	filter.lfs.required=true
+	credential.helper=helper-selector
+	user.email=radsouza@gmail.com
+	user.name=Rogerio Souza
+	core.repositoryformatversion=0
+	core.filemode=false
+	core.bare=false
+	core.logallrefupdates=true
+	core.symlinks=false
+	core.ignorecase=true
+	remote.origin.url=git@github.com:rogsouza/chess.git
+	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+	
+8) Setar o usuario e o email
+
+	λ git config --global user.email "radsouza@gmail.com"
+	λ git config --global user.name "Rogerio Souza"
+
+9) Adionar os arquivos alterados ao git
+
+	λ git add .
+	
+10) Realizar o commit
+
+	λ git commit -m "Project created"
+	[main a8f02d9] Project created
+	 6 files changed, 117 insertions(+)
+	 create mode 100644 .classpath
+	 create mode 100644 .project
+	 create mode 100644 .settings/org.eclipse.core.resources.prefs
+	 create mode 100644 .settings/org.eclipse.jdt.core.prefs
+	 create mode 100644 src/app/Chess.java
+	 create mode 100644 src/module-info.java
+
+11) Enviar as alteracoes para o git remoto
+
+	λ git push -u origin main
+	Enumerating objects: 12, done.
+	Counting objects: 100% (12/12), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (10/10), done.
+	Writing objects: 100% (11/11), 2.04 KiB | 2.04 MiB/s, done.
+	Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+	To github.com:rogsouza/chess.git
+	   9d560ce..a8f02d9  main -> main
+	branch 'main' set up to track 'origin/main'.
+	
 */
