@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author radso
+ *
+ */
+module Chess {
+}
