@@ -1,13 +1,12 @@
 package app;
 
-import boardgame.Position;
+import boardgame.Board;
 
 public class Chess {
 
 	public static void main(String[] args) {
 
-		Position pos = new Position(3, 5);
-		System.out.println(pos);
+		Board board = new Board(8,8);
 
 	}
 
@@ -162,5 +161,46 @@ public class Chess {
 	To github.com:rogsouza/chess.git
 	   9d560ce..a8f02d9  main -> main
 	branch 'main' set up to track 'origin/main'.
+	
+12) Atualizar apos algum ajuste
+
+	λ git status
+	On branch main
+	Your branch is up to date with 'origin/main'.
+	
+	Changes not staged for commit:
+	  (use "git add <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+	        modified:   src/app/Chess.java
+	
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        src/boardgame/
+	
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+	---------------------------------------------------------------------------
+	E:\ws\ws_eclipse\Chess (main -> origin)
+	λ git add .
+	
+	---------------------------------------------------------------------------
+	E:\ws\ws_eclipse\Chess (main -> origin)
+	λ git commit -m "First class: Position"
+	[main 9a45a1c] First class: Position
+	 2 files changed, 137 insertions(+), 3 deletions(-)
+	 create mode 100644 src/boardgame/Position.java
+
+	---------------------------------------------------------------------------
+	E:\ws\ws_eclipse\Chess (main -> origin)
+	λ git push
+	Enumerating objects: 11, done.
+	Counting objects: 100% (11/11), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (5/5), done.
+	Writing objects: 100% (7/7), 2.45 KiB | 1.22 MiB/s, done.
+	Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+	To github.com:rogsouza/chess.git
+	   a8f02d9..9a45a1c  main -> main
 	
 */
